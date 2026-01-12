@@ -1,0 +1,155 @@
+/* Reset básico */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #fdfdfd, #e6e6e6);
+  background-attachment: fixed;
+}
+
+/* Franja roja superior con logo alineado a la izquierda */
+.top-bar {
+  width: 100%;
+  height: 60px;
+  background-color: #b00000;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+/* Logo dentro de la franja roja */
+.logo-franja {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Título */
+.titulo-login {
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+/* Campo de texto y contraseña con mismo estilo */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.85);
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #b00000;
+  outline: none;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #b00000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #900000;
+}
+
+/* Enlaces horizontales */
+.acciones-horizontal {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.acciones-horizontal a {
+  color: #b00000;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: text-decoration 0.2s ease;
+}
+
+.acciones-horizontal a:hover {
+  text-decoration: underline;
+}
+
+/* Aviso de privacidad */
+.privacidad {
+  margin-top: 30px;
+  font-size: 0.8em;
+  color: #444;
+  line-height: 1.4;
+}
+
+.privacidad a {
+  color: #444;
+  text-decoration: underline;
+}
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85em;
+  color: #666;
+  padding-bottom: 20px;
+}
+
+/* Animación de carga para página de espera */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #b00000;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 30px auto;
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mensaje de espera */
+.mensaje-espera {
+  font-size: 0.95em;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    margin: 40px 20px;
+    padding: 20px;
+  }
+
+  .logo-franja {
+    height: 32px;
+  }
+}
